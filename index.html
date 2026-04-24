@@ -7,6 +7,17 @@
             --cinza-claro: #e0e0e0;
         }
 
+        /* Estilo para o listrado clássico */
+        .listrado {
+            background: repeating-linear-gradient(
+                45deg,
+                var(--preto),
+                var(--preto) 10px,
+                var(--off-white) 10px,
+                var(--off-white) 20px
+            );
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -23,134 +34,145 @@
         }
        
         header {
-            background-color: var(--preto);
-            color: var(--off-white);
-            padding: 50px 20px;
+            padding: 40px 20px;
             text-align: center;
+            border-bottom: 3px solid var(--preto);
+        }
+
+        /* Caixa branca interna para o título não sumir no listrado */
+        .header-content {
+            background-color: white;
+            display: inline-block;
+            padding: 20px 40px;
+            border: 2px solid var(--preto);
         }
 
         header h2 {
             font-weight: normal;
-            letter-spacing: 4px;
+            letter-spacing: 6px;
             text-transform: uppercase;
-        }
-       
-        h1 {
-            text-align: center;
-            margin: 40px 0;
-            font-weight: normal;
-            font-style: italic;
-            font-size: 32px;
+            font-size: 28px;
         }
        
         section {
             width: 100%;
             flex: 1;
             display: flex;
-            max-width: 1100px;
-            margin: 0 auto;
-            border: 1px solid var(--preto); /* Moldura clássica */
+            max-width: 1200px;
+            margin: 30px auto;
+            background-color: white;
+            border: 1px solid var(--preto);
         }
        
-        #primeiro {
+        #primeiro, #terceiro {
             width: 25%;
             padding: 20px;
-            border-right: 1px solid var(--preto);
         }
-       
+
+        #primeiro { border-right: 1px solid var(--preto); }
+        #terceiro { border-left: 1px solid var(--preto); }
+
         #segundo {
             width: 50%;
             padding: 40px;
-            background-color: white;
-        }
-       
-        #terceiro {
-            width: 25%;
-            padding: 20px;
-            border-left: 1px solid var(--preto);
         }
        
         footer {
-            background-color: var(--preto);
-            color: var(--off-white);
+            padding: 40px;
+            margin-top: auto;
+            border-top: 3px solid var(--preto);
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 13px;
-            letter-spacing: 1px;
+        }
+
+        .footer-content {
+            background-color: white;
+            padding: 10px 20px;
+            border: 1px solid var(--preto);
+            display: inline-block;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         h3 {
-            font-size: 16px;
+            font-size: 14px;
             text-transform: uppercase;
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--cinza-claro);
+            border-bottom: 1px solid var(--preto);
+            margin: 20px 0 10px 0;
             padding-bottom: 5px;
         }
 
-        p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-            text-align: justify;
-        }
-
-        .lista-simples {
-            list-style: none;
+        p, li {
+            margin-bottom: 15px;
+            line-height: 1.6;
             font-size: 14px;
         }
 
-        .lista-simples li {
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px dotted var(--cinza-claro);
-        }
+        ul { list-style: none; }
+        
+        strong { font-weight: bold; }
     </style>
 </head>
 <body>
-    <header>
-        <h2>[SEU NOME]</h2>
-        <p>Espaço de escrita e estudos</p>
+
+    <header class="listrado">
+        <div class="header-content">
+            <h2>DIÁRIO PESSOAL</h2>
+            <p>Preferências, Sonhos e Registros</p>
+        </div>
     </header>
-   
-    <h1>Notas e Registros</h1>
    
     <section>
         <div id="primeiro">
-            <h3>Menu</h3>
-            <ul class="lista-simples">
-                <li>Início</li>
-                <li>Sobre este projeto</li>
-                <li>Leituras atuais</li>
-                <li>Contato</li>
+            <h3>🎨 Estética</h3>
+            <p><strong>Cores favoritas:</strong><br>Preto, Off-white e rosa.</p>
+
+            <h3>🕹️ Hobbies</h3>
+            <ul>
+                <li>• Tocar Piano </li>
+                <li>• Sair com amigas </li>
             </ul>
+
+            <h3>🎓 Futuro</h3>
+            <p>Pretendo cursar <strong> Na UNIOESTE </strong> para atuar na área de Medicina.</p>
         </div>
        
         <div id="segundo">
-            <h3>Apresentação</h3>
-            <p>Este blog foi desenvolvido como um exercício prático de estrutura web. O objetivo é criar uma interface funcional utilizando apenas HTML e CSS, priorizando a legibilidade e a sobriedade visual.</p>
+            <h3>🌍 Destinos e Viagens</h3>
+            <p>O mundo é vasto e há lugares que despertam minha curiosidade pela arquitetura e cultura. Meus próximos destinos ideais seriam:</p>
+            <ul>
+                <li><strong> New York City:</strong> Pelos arranhas-céus enormnes.</li>
+                <li><strong> Paris :</strong> Pela gastronomia e museus.</li>
+                <li><strong> Havaí :</strong> Um refúgio para descanso e inspiração.</li>
+            </ul>
            
-            <p>A escolha cromática em preto e off-white reflete uma busca pela estética clássica dos antigos impressos, onde o conteúdo escrito é o protagonista. Aqui, pretendo registrar meus avanços acadêmicos e técnicos.</p>
-           
-            <h3>Interesses Técnicos</h3>
-            <p>Atualmente, meu foco de estudo está concentrado em:</p>
-            <ul class="lista-simples">
-                <li>Desenvolvimento Front-end estrutural</li>
-                <li>Design de interfaces minimalistas</li>
-                <li>Lógicas de programação aplicadas</li>
+            <h3 style="margin-top: 40px;">🍸 Mixologia</h3>
+            <p>Aprecio a arte de criar bebidas. Meus drinks favoritos no momento são:</p>
+            <ul>
+                <li>1. Espresso Martini</li>
+                <li>2. Cosmopolitan</li>
+                <li>3. Passion 43</li>
             </ul>
         </div>
        
         <div id="terceiro">
-            <h3>Créditos</h3>
-            <p style="font-size: 13px;">Estrutura baseada no modelo de colunas proposto em sala de aula.</p>
-            
-            <h3 style="margin-top: 30px;">Data</h3>
-            <p style="font-size: 13px;">Abril, 2024</p>
+            <h3>🎧 No Fone</h3>
+            <p><em>Artistas que definem o meu dia:</em></p>
+            <ul style="font-style: italic; font-size: 13px;">
+                <li>- Sade </li>
+                <li>- Rufüs Du Sol </li>
+            </ul>
+
+            <h3>💡 Inspiração</h3>
+            <p>"A simplicidade é o último grau de sofisticação."</p>
         </div>
     </section>
    
-    <footer>
-        <p>© 2024 — [SEU NOME] | DESENVOLVIMENTO WEB</p>
+    <footer class="listrado">
+        <div class="footer-content">
+            <p>© 2024 — Criado por Ana Guzzo</p>
+        </div>
     </footer>
+
 </body>
 </html>
