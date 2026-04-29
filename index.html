@@ -1,7 +1,6 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Meu Diário - Ana Guzzo</title>
     <style>
         * {
             margin: 0;
@@ -10,14 +9,15 @@
         }
        
         body {
-            /* Mudei para uma fonte padrão que todo mundo tem no PC */
-            font-family: "Times New Roman", Times, serif;
+            font-family: "Georgia", serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
             background-color: #fdfaf6;
-            color: #1a1a1a;
         }
-       
-        /* Estilo das listras do fundo */
-        .fundo-listrado {
+
+        /* O estilo listrado que você pediu */
+        .listrado {
             background: repeating-linear-gradient(
                 45deg,
                 #1a1a1a,
@@ -26,146 +26,154 @@
                 #fdfaf6 20px
             );
         }
-
+       
         header {
-            padding: 50px 20px;
+            padding: 40px 20px;
             text-align: center;
-            border-bottom: 2px solid #1a1a1a;
+            border-bottom: 3px solid #1a1a1a;
         }
 
-        .caixa-titulo {
+        .header-caixa {
             background-color: white;
             display: inline-block;
-            padding: 25px 50px;
+            padding: 20px 40px;
             border: 2px solid #1a1a1a;
         }
-
-        header h2 {
-            letter-spacing: 4px;
+       
+        h1 {
+            text-align: center;
+            margin: 20px 0;
             text-transform: uppercase;
-            font-size: 30px;
+            letter-spacing: 3px;
+            font-size: 22px;
         }
        
-        /* Container principal seguindo a lógica do professor */
         section {
-            width: 95%;
-            max-width: 1100px;
-            margin: 30px auto;
+            width: 100%;
+            flex: 1;
             display: flex;
-            background-color: white;
-            border: 1px solid #1a1a1a;
-            min-height: 600px;
+            min-height: 550px;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
         }
        
-        /* Divisões das colunas */
-        #coluna-esquerda {
-            width: 25%;
+        /* Estrutura de colunas do professor */
+        #primeiro {
+            width: 20%;
+            background-color: #fff;
             padding: 20px;
             border-right: 1px solid #1a1a1a;
         }
-
-        #coluna-meio {
-            width: 50%;
+       
+        #segundo {
+            width: 60%;
+            background-color: white;
             padding: 40px;
         }
-
-        #coluna-direita {
-            width: 25%;
+       
+        #terceiro {
+            width: 20%;
+            background-color: #fff;
             padding: 20px;
             border-left: 1px solid #1a1a1a;
         }
        
         footer {
-            padding: 40px;
+            padding: 30px;
             text-align: center;
-            border-top: 2px solid #1a1a1a;
+            border-top: 3px solid #1a1a1a;
         }
 
-        .caixa-footer {
+        .footer-caixa {
             background-color: white;
-            padding: 15px;
+            padding: 10px 20px;
             border: 1px solid #1a1a1a;
             display: inline-block;
         }
 
         h3 {
-            font-size: 16px;
+            font-size: 14px;
             text-transform: uppercase;
             border-bottom: 1px solid #1a1a1a;
             margin: 20px 0 10px 0;
-            padding-bottom: 3px;
+            padding-bottom: 5px;
         }
 
         p, li {
-            margin-bottom: 12px;
-            line-height: 1.5;
-            font-size: 15px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 14px;
         }
 
         ul { list-style: none; }
+        strong { font-weight: bold; }
+
+        /* Substituindo o visual dos botoes por algo P&B */
+        .item-preto {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 8px;
+            margin: 5px 0;
+            text-align: center;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
 
-    <header class="fundo-listrado">
-        <div class="caixa-titulo">
-            <h2>DIÁRIO PESSOAL</h2>
-            <p>Ana Guzzo - Registros e Sonhos</p>
+    <header class="listrado">
+        <div class="header-caixa">
+            <h2>ANA GUZZO</h2>
+            <p>Favorites & Lifestyle</p>
         </div>
     </header>
    
+    <h1>Arquivo Pessoal</h1>
+   
     <section>
-        <!-- Lado esquerdo: Estilo e Hobbies -->
-        <div id="coluna-esquerda">
-            <h3> Estética</h3>
-            <p><strong>Cores favoritas:</strong> Preto, Branco e Rosa.</p>
+        <div id="primeiro">
+            <h3>🎨 Cores</h3>
+            <div class="item-preto">Preto</div>
+            <div class="item-preto">Off-white</div>
+            <div class="item-preto">Rosa</div>
 
-            <h3> Hobbies</h3>
-            <ul>
-                <li>• Tocar Piano</li>
-                <li>• Sair com as amigas</li>
-            </ul>
-
-            <h3> Futuro</h3>
-            <p>Meu foco é passar na <strong>UNIOESTE</strong> para cursar Medicina.</p>
+            <h3>🕹️ Hobbies</h3>
+            <p>• Tocar Piano<br>• Sair com amigas</p>
         </div>
        
-        <!-- Meio: Conteúdo principal -->
-        <div id="coluna-meio">
-            <h3>Quero conhecer:</h3>
-            <p>Lugares que quero conhecer pela arquitetura e cultura:</p>
+        <div id="segundo">
+            <h3>🌍 Lugares que quero visitar</h3>
             <ul>
-                <li><strong>New York:</strong> Pelos prédios enormes.</li>
-                <li><strong>Paris:</strong> Pelos museus e a comida.</li>
-                <li><strong>Havaí:</strong> Para descansar e viajar.</li>
+                <li><strong>New York City:</strong> Pela arquitetura e energia.</li>
+                <li><strong>Paris:</strong> Pela gastronomia e museus.</li>
+                <li><strong>Havaí:</strong> Para descanso e natureza.</li>
             </ul>
            
-            <h3 style="margin-top: 40px;">🍸 Mixologia</h3>
-            <p>Gosto da arte de preparar bebidas. Meus favoritos:</p>
-            <ul>
-                <li>1. Espresso Martini</li>
-                <li>2. Cosmopolitan</li>
-                <li>3. Passion 43</li>
-            </ul>
+            <h3 style="margin-top: 40px;">🍴 Gastronomia & Drinks</h3>
+            <p><strong>Comidas:</strong> Comidas Italianas no geral, Sushi e um belo Tiramissú.</p>
+            <p><strong>Bebidas:</strong> Espresso Martini, Cosmopolitan e Passion 43.</p>
+           
+            <h3 style="margin-top: 40px;">🎓 Futuro</h3>
+            <p>Preparação para o curso de <strong>Medicina na UNIOESTE</strong>.</p>
         </div>
        
-        <!-- Lado direito: Música e Frases -->
-        <div id="coluna-direita">
-            <h3>No Fone</h3>
-            <p><em>O que estou ouvindo:</em></p>
-            <ul style="font-style: italic;">
+        <div id="terceiro">
+            <h3>🎧 No Fone</h3>
+            <p><em>Artistas favoritos:</em></p>
+            <ul>
                 <li>- Sade</li>
                 <li>- Rufüs Du Sol</li>
             </ul>
 
-            <h3> Inspiração</h3>
-            <p>"You Only Live Once (YOLO)."</p>
+            <h3>💡 Frase</h3>
+            <p>"You Only Live Once."</p>
         </div>
     </section>
    
-    <footer class="fundo-listrado">
-        <div class="caixa-footer">
-            <p>© 2024 — Desenvolvido por Ana Guzzo em Aula</p>
+    <footer class="listrado">
+        <div class="footer-caixa">
+            <p>© Criado por Ana Guzzo</p>
         </div>
     </footer>
 
